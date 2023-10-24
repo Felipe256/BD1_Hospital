@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS Quarto(
 );
 CREATE TABLE IF NOT EXISTS Paciente(
 	cpfPaciente varchar(11) NOT NULL,
-	sorotipagem char(2) NOT NULL,
+	sorotipagem varchar(3) NOT NULL,
 	NrQuarto int,
 	
 	CONSTRAINT CPFPKpaciente PRIMARY KEY(cpfPaciente),
