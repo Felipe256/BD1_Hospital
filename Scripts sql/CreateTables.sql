@@ -31,9 +31,7 @@ CREATE TABLE IF NOT EXISTS Paciente(
 	CONSTRAINT NRQUARTOFKpaciente FOREIGN KEY(NRQuarto) REFERENCES Quarto(NUM_QUARTO) ON DELETE SET NULL ON UPDATE CASCADE
 );
 
-ALTER TABLE paciente ALTER COLUMN sorotipagem TYPE char(3)
-
-CREATE TABLE IF NOT EXISTS enfermeiro(
+CREATE TABLE IF NOT EXISTS Enfermeiro(
 	cpf varchar(11) NOT NULL,
 	coren varchar(19) NOT NULL,
 	plantao varchar(5),
@@ -51,7 +49,7 @@ CREATE TABLE IF NOT EXISTS Medico(
 	CONSTRAINT cpfFKmedico FOREIGN KEY(cpf) REFERENCES Pessoa(cpf) ON DELETE CASCADE ON UPDATE CASCADE
 );
 	
-CREATE TABLE IF NOT EXISTS especialidade(
+CREATE TABLE IF NOT EXISTS Especialidade(
 	crm varchar(13) NOT NULL,
 	descricao varchar(20) NOT NULL,
 	
