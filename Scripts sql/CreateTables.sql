@@ -1,3 +1,9 @@
+/* Todas as constraints
+Pessoa: cpfPKpessoa
+Telefone: cpfPKtel, CPFFKtel
+Quarto: PKNUMquarto
+Paciente: CPFPKpaciente, CPFFKpaciente, NRQUARTOFKpaciente
+*/
 CREATE SCHEMA IF NOT EXISTS hosp
     AUTHORIZATION postgres;
 
