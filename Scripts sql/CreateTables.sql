@@ -3,6 +3,13 @@ Pessoa: cpfPKpessoa
 Telefone: cpfPKtel, CPFFKtel
 Quarto: PKNUMquarto
 Paciente: CPFPKpaciente, CPFFKpaciente, NRQUARTOFKpaciente
+Enfermeiro: corenPKenfermeiro, cpfFKmedico
+Medico: cpfFKmedico, crmPKmedico
+Especialidade: crmFKespec
+Comorbidade: cpfPKComorbidade, cpfFKComorbidade
+Consulta: cpfFKConsulta, crmFKConsulta, idPKConsulta
+Exame: corenFKExame, cpfFKExame, crmFKExame, idPKExame
+
 */
 CREATE SCHEMA IF NOT EXISTS hosp
     AUTHORIZATION postgres;
