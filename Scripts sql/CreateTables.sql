@@ -89,3 +89,32 @@ CREATE TABLE IF NOT EXISTS Exame(
 	CONSTRAINT cpfFKExame FOREIGN KEY(cpf) REFERENCES Paciente(cpfpaciente) ON DELETE CASCADE ON UPDATE CASCADE,
 	CONSTRAINT corenFKExame FOREIGN KEY(coren) REFERENCES Enfermeiro(coren) ON DELETE CASCADE ON UPDATE CASCADE
 );
+
+CREATE TABLE IF NOT EXISTS Resultado(
+	id varchar(6) NOT NULL,
+	descricao varchar(20) NOT NULL,
+
+	CONSTRAINT idFKresul FOREIGN KEY(id) REFERENCES Exame(id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS CentroCirurgico(
+	numero int,
+
+	CONSTRAINT numeroPKCentroCirurgico PRIMARY KEY(numero)
+);
+
+CREATE TABLE IF NOT EXISTS Cirurgia(
+	id varchar(6) NOT NULL,
+	crm varchar(13) NOT NULL,
+	cpf varchar(11) NOT NULL,
+	coren varchar(19) NOT NULL,
+	numero int NOT NULL,
+	horario timestamp NOT NULL,
+	descricao varchar(100) NOT NULL,
+
+	CONSTRAINT idPKCirurgia PRIMARY KEY(id),
+	CONSTRAINT crmFKCirugia FOREIGN KEY(crm) REFERENCES Medico(crm) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT cpfFKCirurgia FOREIGN KEY(cpf) REFERENCES Paciente(cpfpaciente) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT corenFKCirurgia FOREIGN KEY(coren) REFERENCES Enfermeiro(coren) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT numeroFKCirurgia FOREIGN KEY(numero) REFERENCES CentroCirurgico(numero) ON DELETE CASCADE ON UPDATE CASCADE
+);
