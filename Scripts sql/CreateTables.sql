@@ -106,6 +106,8 @@ CREATE TABLE IF NOT EXISTS Exame(
 CREATE TABLE IF NOT EXISTS Resultado(
 	id varchar(6) NOT NULL,
 	descricao varchar(20) NOT NULL,
+	valorObtido varchar(50),
+	valorReferencia varchar(50),
 
 	CONSTRAINT idFKresul FOREIGN KEY(id) REFERENCES Exame(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
